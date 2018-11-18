@@ -64,14 +64,14 @@
         style="@style/ScrollView"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <com.example.xyzreader.ui.MaxWidthLinearLayout
+        <com.ramyfradwan.xyzreader.ui.MaxWidthLinearLayout
             style="@style/ArticleBodyContainer">
 
             <TextView
                 android:id="@+id/article_body"
                 style="@style/ArticleBody" />
 
-        </com.example.xyzreader.ui.MaxWidthLinearLayout>
+        </com.ramyfradwan.xyzreader.ui.MaxWidthLinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
 
