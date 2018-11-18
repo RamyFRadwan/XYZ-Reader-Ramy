@@ -26,9 +26,11 @@
         <activity
             android:name=".ui.ArticleDetailActivity"
             android:parentActivityName=".ui.ArticleListActivity">
+            // missing URL issue solution from StackOverFlow
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.PICK" />
                 <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.OPENABLE" />
                 <data android:mimeType="vnd.android.cursor.item/vnd.com.ramyfradwan.xyzreader.items" />
             </intent-filter>
             <meta-data

@@ -6,12 +6,6 @@ import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.graphics.Bitmap;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.GregorianCalendar;
-
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -35,6 +29,11 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.ramyfradwan.xyzreader.R;
 import com.ramyfradwan.xyzreader.data.ArticleLoader;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  * A fragment representing a single Article detail screen. This fragment is
@@ -112,15 +111,15 @@ public class ArticleDetailFragment extends Fragment implements
             Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
 
-        mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
-        mAppBar = (AppBarLayout) mRootView.findViewById(R.id.main_appbar);
-        mProgressBar = (ProgressBar) mRootView.findViewById(R.id.progress_bar);
-        mScrollView = (NestedScrollView) mRootView.findViewById(R.id.scrollview);
+        mPhotoView = mRootView.findViewById(R.id.photo);
+        mAppBar = mRootView.findViewById(R.id.main_appbar);
+        mProgressBar = mRootView.findViewById(R.id.progress_bar);
+        mScrollView = mRootView.findViewById(R.id.scrollview);
 
-        mCollapsingToolbarLayout = (CollapsingToolbarLayout) mRootView.findViewById(R.id.layout_collapsing);
+        mCollapsingToolbarLayout = mRootView.findViewById(R.id.layout_collapsing);
         mCollapsingToolbarLayout.setTitleEnabled(false);
 
-        mToolbar = (Toolbar) mRootView.findViewById(R.id.fragment_toolbar);
+        mToolbar = mRootView.findViewById(R.id.fragment_toolbar);
         getActivityCast().setSupportActionBar(mToolbar);
         getActivityCast().getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -142,7 +141,7 @@ public class ArticleDetailFragment extends Fragment implements
             }
         });
 
-        mShareFloatingActionButton = (FloatingActionButton) mRootView.findViewById(R.id.share_fab);
+        mShareFloatingActionButton = mRootView.findViewById(R.id.share_fab);
         mShareFloatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -174,10 +173,10 @@ public class ArticleDetailFragment extends Fragment implements
             return;
         }
 
-        TextView titleView = (TextView) mRootView.findViewById(R.id.article_title);
-        TextView bylineView = (TextView) mRootView.findViewById(R.id.article_byline);
+        TextView titleView = mRootView.findViewById(R.id.article_title);
+        TextView bylineView = mRootView.findViewById(R.id.article_byline);
         bylineView.setMovementMethod(new LinkMovementMethod());
-        TextView bodyView = (TextView) mRootView.findViewById(R.id.article_body);
+        TextView bodyView = mRootView.findViewById(R.id.article_body);
 
         if (mCursor != null) {
             mRootView.setAlpha(0);
@@ -236,12 +235,14 @@ public class ArticleDetailFragment extends Fragment implements
                     });
             mAppBar.setVisibility(View.VISIBLE);
             mScrollView.setVisibility(View.VISIBLE);
-            mShareFloatingActionButton.setVisibility(View.VISIBLE);
+//            mShareFloatingActionButton.setVisibility(View.VISIBLE);
+            mShareFloatingActionButton.show();
             mProgressBar.setVisibility(View.GONE);
         } else {
             mAppBar.setVisibility(View.GONE);
             mScrollView.setVisibility(View.GONE);
-            mShareFloatingActionButton.setVisibility(View.GONE);
+//            mShareFloatingActionButton.setVisibility(View.GONE);
+            mShareFloatingActionButton.hide();
             mProgressBar.setVisibility(View.VISIBLE);
             titleView.setText(getString(R.string.default_text));
             bylineView.setText(getString(R.string.default_text));
