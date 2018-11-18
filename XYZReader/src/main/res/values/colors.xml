@@ -18,12 +18,12 @@
 <resources>
     <color name="photo_placeholder">#ccc</color>
 
-    <color name="colorPrimary">#2196f3</color>
-    <color name="colorPrimaryDark">#0069c0</color>
-    <color name="colorAccent">#d81b60</color>
+    <color name="colorPrimary">#673AB7</color>
+    <color name="colorPrimaryDark">#512DA8</color>
+    <color name="colorAccent">#FF5722</color>
 
-    <color name="colorPrimaryText">#de000000</color>
-    <color name="colorSecondaryText">#8a000000</color>
+    <color name="colorPrimaryText">#212121</color>
+    <color name="colorSecondaryText">#757575</color>
 
     <color name="color_white">#fff</color>
     <color name="color_grey">#333</color>
