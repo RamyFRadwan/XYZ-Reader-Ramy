@@ -8,15 +8,16 @@ import android.database.Cursor;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v13.app.FragmentStatePagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
 import android.view.View;
 
 import com.ramyfradwan.xyzreader.R;
 import com.ramyfradwan.xyzreader.data.ArticleLoader;
 import com.ramyfradwan.xyzreader.data.ItemsContract;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.legacy.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 /**
  * An activity representing a single Article detail screen, letting you swipe between articles.

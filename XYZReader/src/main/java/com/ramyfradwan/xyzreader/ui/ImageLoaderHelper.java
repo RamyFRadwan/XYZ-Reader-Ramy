@@ -2,16 +2,17 @@ package com.ramyfradwan.xyzreader.ui;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.support.v4.util.LruCache;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
 
-public class ImageLoaderHelper {
+import androidx.collection.LruCache;
+
+class ImageLoaderHelper {
     private static ImageLoaderHelper sInstance;
 
-    public static ImageLoaderHelper getInstance(Context context) {
+    static ImageLoaderHelper getInstance(Context context) {
         if (sInstance == null) {
             sInstance = new ImageLoaderHelper(context.getApplicationContext());
         }
@@ -38,7 +39,7 @@ public class ImageLoaderHelper {
         mImageLoader = new ImageLoader(queue, imageCache);
     }
 
-    public ImageLoader getImageLoader() {
+    ImageLoader getImageLoader() {
         return mImageLoader;
     }
 }
